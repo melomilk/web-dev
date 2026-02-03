@@ -1,0 +1,307 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      color: #fff;
+    }
+
+    .page-wrapper {
+      width: 100%;
+      max-width: 1180px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 56px;
+      padding: 40px 24px;
+    }
+
+    /* Left promo panel */
+    .promo-panel {
+      flex: 1.2;
+      color: #fff;
+    }
+
+    .ig-logo-mark {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      background: radial-gradient(circle at 30% 30%, #f9ce34, #ee2a7b, #6228d7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .ig-logo-mark span {
+      border: 2px solid #fff;
+      border-radius: 16px;
+      width: 34px;
+      height: 34px;
+      display: block;
+      position: relative;
+    }
+
+    .ig-logo-mark span::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    .ig-logo-mark span::after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #fff;
+      right: 6px;
+      top: 6px;
+    }
+
+    .promo-heading {
+      font-size: 38px;
+      line-height: 1.2;
+      max-width: 520px;
+      margin-bottom: 16px;
+    }
+
+    .promo-highlight {
+      color: #f77737;
+    }
+
+    .promo-subtext {
+      font-size: 16px;
+      color: #a8a8a8;
+      max-width: 420px;
+    }
+
+    /* Right login panel */
+    .login-panel {
+      flex: 1;
+      max-width: 420px;
+      color: #fff;
+    }
+
+    .login-card {
+      background: #111827;
+      border-radius: 12px;
+      padding: 24px 24px 28px;
+      border: 1px solid #1f2937;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .login-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: #e5e7eb;
+      font-size: 16px;
+    }
+
+    .chevron {
+      font-size: 20px;
+      color: #9ca3af;
+    }
+
+    .login-title {
+      font-weight: 600;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid #374151;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+
+    .text-input::placeholder {
+      color: #6b7280;
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px #2563eb;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px 0;
+      border-radius: 999px;
+      border: none;
+      background: #1d4ed8;
+      color: #d1d5db;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    .login-btn:hover {
+      background: #1e40af;
+    }
+
+    .forgot-link {
+      display: block;
+      text-align: center;
+      margin: 14px 0;
+      font-size: 14px;
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    .line-divider {
+      border-bottom: 1px solid #1f2937;
+      margin-bottom: 18px;
+    }
+
+    .secondary-btn {
+      width: 100%;
+      padding: 12px 0;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      background: transparent;
+      color: #e5e7eb;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .secondary-btn:hover {
+      background: #020617;
+    }
+
+    .fb-icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #1877f2;
+      display: inline-block;
+      position: relative;
+    }
+
+    .fb-icon::before {
+      content: "f";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -54%);
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .create-btn {
+      width: 100%;
+      padding: 12px 0;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      background: transparent;
+      color: #e5e7eb;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .create-btn:hover {
+      background: #020617;
+    }
+
+    .meta-footer {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .meta-symbol {
+      display: inline-block;
+      width: 38px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid #6b7280;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .meta-symbol::before,
+    .meta-symbol::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid #6b7280;
+      top: 3px;
+    }
+
+    .meta-symbol::before {
+      left: 4px;
+      border-right-color: transparent;
+    }
+
+    .meta-symbol::after {
+      right: 4px;
+      border-left-color: transparent;
+    }
+
+    .meta-text {
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .promo-panel {
+        text-align: center;
+      }
+
+      .promo-heading {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .promo-subtext {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }

@@ -1,0 +1,297 @@
+
+    /* Base reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f6f8fa;
+      color: #24292f;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    a {
+      color: #0969da;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Buttons */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background: #1f883d;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #1f883d;
+      color: #ffffff;
+      border-color: #1f883d;
+    }
+
+    .btn-primary:hover {
+      background: #1a7f37;
+      border-color: #1a7f37;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: #24292f;
+      border-color: #d0d7de;
+    }
+
+    .btn-outline:hover {
+      background: #f3f4f6;
+    }
+
+    /* Hero section */
+    .hero {
+      background: #ffffff;
+      border-bottom: 1px solid #d0d7de;
+      padding: 56px 16px 40px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #57606a;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 40px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: #57606a;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: #6e7781;
+    }
+
+    /* Pricing section */
+    .pricing {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 16px 48px;
+    }
+
+    .pricing-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+      align-items: center;
+    }
+
+    .pricing-header h2 {
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .pricing-header p {
+      font-size: 14px;
+      color: #57606a;
+    }
+
+    .billing-toggle {
+      font-size: 13px;
+      color: #57606a;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .plan-card {
+      border-radius: 12px;
+      border: 1px solid #d0d7de;
+      background: #ffffff;
+      padding: 24px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+    }
+
+    .plan-card.popular {
+      border-color: #0969da;
+      box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.25), 0 8px 24px rgba(140, 149, 159, 0.3);
+    }
+
+    .plan-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #57606a;
+      margin-bottom: 6px;
+    }
+
+    .plan-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .plan-desc {
+      font-size: 13px;
+      color: #57606a;
+      margin-bottom: 14px;
+      min-height: 36px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .price-main {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .price-period,
+    .price-note {
+      font-size: 12px;
+      color: #57606a;
+    }
+
+    .plan-cta {
+      margin-top: 14px;
+      margin-bottom: 12px;
+    }
+
+    .plan-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .feature-list {
+      list-style: none;
+      font-size: 13px;
+      color: #24292f;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: #22c55e;
+      margin-right: 6px;
+    }
+
+    /* Add-ons section */
+    .addons {
+      max-width: 1100px;
+      margin: 0 auto 56px;
+      padding: 0 16px;
+    }
+
+    .addons-header {
+      margin-bottom: 20px;
+    }
+
+    .addons-header h2 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .addons-header p {
+      font-size: 14px;
+      color: #57606a;
+      max-width: 620px;
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .addon-card {
+      border-radius: 12px;
+      border: 1px solid #d0d7de;
+      background: #ffffff;
+      padding: 20px 18px 20px;
+    }
+
+    .addon-label {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a855f7;
+      margin-bottom: 6px;
+    }
+
+    .addon-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .addon-desc {
+      font-size: 13px;
+      color: #57606a;
+      margin-bottom: 10px;
+    }
+
+    .addon-meta {
+      font-size: 12px;
+      color: #6e7781;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .pricing-grid,
+      .addons-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
