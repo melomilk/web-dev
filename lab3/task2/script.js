@@ -3,7 +3,7 @@ const input = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
 form.addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault(); //we dont reload the page automatically bc it may not save the task and fck up  the website
 
     const taskText = input.value.trim();
     if (taskText === '') {
@@ -16,7 +16,7 @@ form.addEventListener('submit', function (event) {
 
 function addTodoItem(text) {
     const listItem = document.createElement('li');
-    listItem.className = 'todo-item';
+    listItem.className = 'todo-item'; //new dom mode - li + prisvaivaem new item "todo item"
 
     const leftSection = document.createElement('div');
     leftSection.className = 'todo-left';
@@ -28,8 +28,8 @@ function addTodoItem(text) {
     span.textContent = text;
     span.className = 'todo-text';
 
-    checkbox.addEventListener('change', function () {
-        span.classList.toggle('done');
+    checkbox.addEventListener('change', function () { //checkbox behavior 
+        span.classList.toggle('done');//when checkbox state changes if checked add class done
     });
 
     const deleteButton = document.createElement('button');
@@ -37,7 +37,7 @@ function addTodoItem(text) {
     deleteButton.className = 'delete-btn';
 
     deleteButton.addEventListener('click', function () {
-        todoList.removeChild(listItem);
+        todoList.removeChild(listItem); //removes the node from dom tree
     });
 
     leftSection.appendChild(checkbox);
@@ -46,5 +46,6 @@ function addTodoItem(text) {
     listItem.appendChild(leftSection);
     listItem.appendChild(deleteButton);
 
+    //we did everything for the sake of building structure! now we gotta append all of this bullshit :D
     todoList.appendChild(listItem);
 }
