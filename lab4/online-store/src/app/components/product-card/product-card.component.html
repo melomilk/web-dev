@@ -1,5 +1,5 @@
-<article class="card" *ngIf="product">
-  <a class="imageWrap" [href]="product.link" target="_blank" rel="noopener noreferrer">
+<article class="card" *ngIf="product"> <!--the product will be shown if it fr exists-->
+  <a class="imageWrap" [href]="product.link" target="_blank" rel="noopener noreferrer"> <!--property binding: dynamically input data  in html-->
     <img class="image" [src]="product.image" [alt]="product.name" />
   </a>
 

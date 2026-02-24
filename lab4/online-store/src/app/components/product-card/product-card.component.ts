@@ -15,7 +15,7 @@ export class ProductCardComponent {
   stars: number[] = [1, 2, 3, 4, 5];
 
   getRoundedRating(): number {
-    // simple visual: round to nearest whole star
+    // round to nearest whole star (rating)
     return Math.round(this.product.rating);
   }
 

@@ -1,4 +1,4 @@
-export interface Product {
+export interface Product { //interface - just like in oop
   id: number;
   name: string;
   description: string;
