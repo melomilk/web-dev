@@ -1,0 +1,8 @@
+<section class="header">
+  <h1>Online Store</h1>
+  <p class="subtitle">Kaspi product catalog demo (Lab 4)</p>
+</section>
+
+<section class="grid">
+  <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+</section>

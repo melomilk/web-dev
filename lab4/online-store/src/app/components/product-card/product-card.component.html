@@ -1,0 +1,30 @@
+<article class="card" *ngIf="product">
+  <a class="imageWrap" [href]="product.link" target="_blank" rel="noopener noreferrer">
+    <img class="image" [src]="product.image" [alt]="product.name" />
+  </a>
+
+  <div class="content">
+    <a class="title" [href]="product.link" target="_blank" rel="noopener noreferrer">
+      {{ product.name }}
+    </a>
+
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="row">
+      <div class="price">{{ product.price }} ₸</div>
+
+      <div class="rating" [title]="'Rating: ' + product.rating">
+        <span class="star"
+              *ngFor="let s of stars; let i = index"
+              [class.filled]="i < getRoundedRating()">★</span>
+        <span class="ratingNum">{{ product.rating }}</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn" [href]="product.link" target="_blank" rel="noopener noreferrer">Open on Kaspi</a>
+      <a class="btn ghost" [href]="getWhatsAppShareUrl()" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a class="btn ghost" [href]="getTelegramShareUrl()" target="_blank" rel="noopener noreferrer">Telegram</a>
+    </div>
+  </div>
+</article>
