@@ -1,117 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
-import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductItemComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent],
+  imports: [CommonModule, ProductItemComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
-export class ProductListComponent {
-  // NOTE: images are local placeholders; links are real kaspi.kz pages.
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Apple iPhone 15 128GB',
-      description: 'buy yourself an iphone 15 for just 560k KZT!',
-      price: 560254,
-      rating: 4.9,
-      image: 'assets/images/iphone15.jpg',
-      images: ['assets/images/p1.jpg', 'assets/images/p2.jpg', 'assets/images/p3.jpg'],
-      link: 'https://kaspi.kz/shop/p/apple-iphone-15-128gb-goluboi-113137929/?c=750000000',
-    },
-    {
-      id: 2,
-      name: 'Apple iPhone 16 256GB',
-      description: 'buy yourself an iphone 15 for just 640k KZT!',
-      price: 640000,
-      rating: 4.8,
-      image: 'assets/images/iphone16.jpg',
-      images: ['assets/images/p2.jpg', 'assets/images/p1.jpg', 'assets/images/p3.jpg'],
-      link: 'https://kaspi.kz/shop/p/apple-iphone-16-128gb-zelenyi-123727574/?c=750000000',
-    },
-    {
-      id: 3,
-      name: 'Apple AirPods Pro (2nd gen)',
-      description: 'airpods are a MUST',
-      price: 129990,
-      rating: 4.9,
-      image: 'assets/images/airpods.jpg',
-      images: ['assets/images/p3.jpg', 'assets/images/p4.jpg', 'assets/images/p5.jpg'],
-      link: 'https://kaspi.kz/shop/p/naushniki-apple-airpods-pro-2nd-generation-with-wireless-magsafe-charging-case-belyi-113677582/?c=750000000',
-    },
-    {
-      id: 4,
-      name: 'Apple AirPods 4',
-      description: 'coolest wireless airpods',
-      price: 89990,
-      rating: 4.7,
-      image: 'assets/images/airpods4.jpg',
-      images: ['assets/images/p4.jpg', 'assets/images/p3.jpg', 'assets/images/p5.jpg'],
-      link: 'https://kaspi.kz/shop/p/naushniki-apple-airpods-4-belyi-124333372/?c=750000000',
-    },
-    {
-      id: 5,
-      name: 'Bork Hair Dryer',
-      description: 'dyson is outdated - get yourself a bork',
-      price: 379990,
-      rating: 4.9,
-      image: 'assets/images/borkdryer.jpg',
-      images: ['assets/images/p5.jpg', 'assets/images/p6.jpg', 'assets/images/p7.jpg'],
-      link: 'https://kaspi.kz/shop/p/bork-f732-stailer-bezhevyi-oranzhevyi-122968179/?c=750000000',
-    },
-    {
-      id: 6,
-      name: 'Sony WH-1000XM4',
-      description: 'COOLEST HEADPHONES ON KASPI',
-      price: 373323,
-      rating: 4.8,
-      image: 'assets/images/sony.jpg',
-      images: ['assets/images/p6.jpg', 'assets/images/p5.jpg', 'assets/images/p7.jpg'],
-      link: 'https://kaspi.kz/shop/p/naushniki-sony-wh-1000xm4-serebristyi-100509735/?c=750000000',
-    },
-    {
-      id: 7,
-      name: 'Marshall Major IV',
-      description: 'go get urself a cool pair of headphones',
-      price: 543447,
-      rating: 4.9,
-      image: 'assets/images/marshall.jpg',
-      images: ['assets/images/p7.jpg', 'assets/images/p8.jpg', 'assets/images/p9.jpg'],
-      link: 'https://kaspi.kz/shop/p/naushniki-marshall-major-iv-jbl-clip-4-sinii-chernyi-131793119/?c=750000000',
-    },
-    {
-      id: 8,
-      name: 'Nintendo Switch OLED',
-      description: 'nintendoooooo',
-      price: 159990,
-      rating: 4.8,
-      image: 'assets/images/nintendo.jpg',
-      images: ['assets/images/p8.jpg', 'assets/images/p9.jpg', 'assets/images/p10.jpg'],
-      link: 'https://kaspi.kz/shop/search/?text=nintendo%20switch%20oled&q=%3AavailableInZones%3AMagnum_ZONE1&sort=relevance&filteredByCategory=false&sc=',
-    },
-    {
-      id: 9,
-      name: 'Sony PlayStation 5 Slim Digital Bundle',
-      description: 'gift it to smb idk',
-      price: 289990,
-      rating: 4.8,
-      image: 'assets/images/sonypl.jpg',
-      images: ['assets/images/p9.jpg', 'assets/images/p8.jpg', 'assets/images/p10.jpg'],
-      link: 'https://kaspi.kz/shop/p/sony-playstation-5-slim-114696098/?c=750000000',
-    },
-    {
-      id: 10,
-      name: 'Apple MacBook Air 13 (2022) 16GB/256GB',
-      description: 'dont you think you should get and go to every almaty letka?',
-      price: 543960,
-      rating: 5.0,
-      image: 'assets/images/macbook.jpg',
-      images: ['assets/images/p10.jpg', 'assets/images/p11.jpg', 'assets/images/p12.jpg'],
-      link: 'https://kaspi.kz/shop/p/apple-macbook-air-13-2020-13-3-8-gb-ssd-256-gb-macos-mgn63ru-a-101182724/?c=750000000',
-    },
-  ];
+export class ProductListComponent implements OnChanges {
+  @Input() products: Product[] = [];
+
+  displayedProducts: Product[] = [];
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['products']) {
+      this.displayedProducts = [...this.products];
+    }
+  }
+
+  handleDelete(productId: number): void {
+    this.displayedProducts = this.displayedProducts.filter((p) => p.id !== productId);
+  }
+
+  trackById(_index: number, product: Product): number {
+    return product.id;
+  }
 }

@@ -1,8 +1,13 @@
-<section class="header">
-  <h1>Online Store</h1>
-  <p class="subtitle">Kaspi product catalog demo (Lab 4)</p>
+<section *ngIf="displayedProducts.length > 0; else emptyState">
+  <section class="grid">
+    <app-product-item
+      *ngFor="let p of displayedProducts; trackBy: trackById"
+      [product]="p"
+      (delete)="handleDelete($event)">
+    </app-product-item>
+  </section>
 </section>
 
-<section class="grid">
-  <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
-</section>
+<ng-template #emptyState>
+  <p class="empty">No products in this category.</p>
+</ng-template>

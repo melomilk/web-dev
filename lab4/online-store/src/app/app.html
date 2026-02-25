@@ -1,1 +1,28 @@
-<router-outlet></router-outlet>
+<main class="app">
+  <section class="header">
+    <h1>Online Store</h1>
+    <p class="subtitle">Kaspi product catalog demo (Lab 5)</p>
+  </section>
+
+  <nav class="categories">
+    <button
+      *ngFor="let category of categories"
+      type="button"
+      class="category"
+      [class.active]="category.id === selectedCategoryId"
+      (click)="onSelectCategory(category.id)">
+      {{ category.name }}
+    </button>
+  </nav>
+
+  <section class="content">
+    <p *ngIf="!selectedCategoryId" class="welcome">
+      Please select a category to see products.
+    </p>
+
+    <app-product-list
+      *ngIf="selectedCategoryId"
+      [products]="currentProducts">
+    </app-product-list>
+  </section>
+</main>

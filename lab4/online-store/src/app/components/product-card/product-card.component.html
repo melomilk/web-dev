@@ -21,10 +21,16 @@
       </div>
     </div>
 
+    <div class="row likesRow">
+      <span class="likes">❤ {{ product.likes }}</span>
+      <button class="btn like" type="button" (click)="onLike()">Like</button>
+    </div>
+
     <div class="actions">
       <a class="btn" [href]="product.link" target="_blank" rel="noopener noreferrer">Open on Kaspi</a>
       <a class="btn ghost" [href]="getWhatsAppShareUrl()" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       <a class="btn ghost" [href]="getTelegramShareUrl()" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <button class="btn danger" type="button" (click)="onDeleteClick()">Delete</button>
     </div>
   </div>
 </article>

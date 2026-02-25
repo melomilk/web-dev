@@ -1,14 +1,11 @@
-.header {
-  margin-bottom: 14px;
-}
-
-.subtitle {
-  margin: 0;
-  opacity: 0.7;
-}
-
 .grid {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.empty {
+  margin-top: 24px;
+  text-align: center;
+  color: #777;
 }
