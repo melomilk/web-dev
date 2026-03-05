@@ -1,0 +1,36 @@
+<section class="albums">
+  <header class="albums__header">
+    <h1>Albums</h1>
+    <button class="albums__refresh" type="button" (click)="fetchAlbums()">Reload</button>
+  </header>
+
+  <div *ngIf="loading" class="albums__state">
+    <div class="spinner" aria-hidden="true"></div>
+    <p>Loading albums...</p>
+  </div>
+
+  <div *ngIf="!loading && error" class="albums__state albums__state--error">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="!loading && !error && albums.length === 0" class="albums__state">
+    <p>No albums found.</p>
+  </div>
+
+  <ul *ngIf="!loading && !error && albums.length > 0" class="albums__list">
+    <li *ngFor="let album of albums" class="albums__item">
+      <a class="albums__link" [routerLink]="['/albums', album.id]">
+        <span class="albums__id">#{{ album.id }}</span>
+        <span class="albums__title">{{ album.title }}</span>
+      </a>
+      <button
+        type="button"
+        class="albums__delete"
+        (click)="deleteAlbum(album); $event.stopPropagation()"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</section>
+

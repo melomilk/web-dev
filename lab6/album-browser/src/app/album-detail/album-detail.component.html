@@ -1,0 +1,53 @@
+<section class="detail">
+  <ng-container *ngIf="loading">
+    <div class="detail__state">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Loading album...</p>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!loading && error">
+    <div class="detail__state detail__state--error">
+      <p>{{ error }}</p>
+    </div>
+    <button class="detail__back" type="button" (click)="goBack()">Back to Albums</button>
+  </ng-container>
+
+  <ng-container *ngIf="!loading && !error && album">
+    <header class="detail__header">
+      <h1>Album #{{ album.id }}</h1>
+      <button class="detail__back" type="button" (click)="goBack()">Back to Albums</button>
+    </header>
+
+    <div class="detail__meta">
+      <p><strong>User ID:</strong> {{ album.userId }}</p>
+    </div>
+
+    <form class="detail__form" (ngSubmit)="save()">
+      <label for="title">Album title</label>
+      <input
+        id="title"
+        name="title"
+        type="text"
+        [(ngModel)]="album.title"
+        required
+        autocomplete="off"
+      />
+
+      <div class="detail__actions">
+        <button class="detail__save" type="submit" [disabled]="saving">
+          {{ saving ? 'Saving...' : 'Save' }}
+        </button>
+
+        <a
+          class="detail__photos-link"
+          [routerLink]="['/albums', album.id, 'photos']"
+          routerLinkActive="detail__photos-link--active"
+        >
+          View Photos
+        </a>
+      </div>
+    </form>
+  </ng-container>
+</section>
+

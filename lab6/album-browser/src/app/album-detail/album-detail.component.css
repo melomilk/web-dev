@@ -1,0 +1,119 @@
+.detail {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #020617;
+  color: #e5e7eb;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.55);
+}
+
+.detail__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.detail__state {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #9ca3af;
+}
+
+.detail__state--error {
+  color: #fecaca;
+}
+
+.detail__meta {
+  margin-bottom: 1.5rem;
+  color: #cbd5f5;
+}
+
+.detail__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail__form label {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.detail__form input[type='text'] {
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.detail__form input[type='text']:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px #6366f1;
+}
+
+.detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.detail__save {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: #ecfdf3;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.detail__save[disabled] {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.detail__photos-link {
+  padding: 0.45rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.detail__photos-link:hover {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.detail__back {
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.detail__back:hover {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+@media (max-width: 640px) {
+  .detail {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .detail__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+

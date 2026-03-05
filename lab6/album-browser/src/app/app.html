@@ -1,0 +1,23 @@
+<div class="shell">
+  <header class="shell__header">
+    <div class="shell__brand">
+      <span class="shell__logo">AB</span>
+      <span class="shell__title">Album Browser</span>
+    </div>
+    <nav class="shell__nav" aria-label="Main navigation">
+      <a routerLink="/home" routerLinkActive="shell__link--active" class="shell__link">
+        Home
+      </a>
+      <a routerLink="/about" routerLinkActive="shell__link--active" class="shell__link">
+        About
+      </a>
+      <a routerLink="/albums" routerLinkActive="shell__link--active" class="shell__link">
+        Albums
+      </a>
+    </nav>
+  </header>
+
+  <main class="shell__main">
+    <router-outlet></router-outlet>
+  </main>
+</div>
