@@ -1,0 +1,45 @@
+.app {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+}
+
+.header {
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.category {
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  padding: 6px 14px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.category.active {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.content {
+  min-height: 200px;
+}
+
+.welcome {
+  margin-top: 16px;
+  color: #666;
+}

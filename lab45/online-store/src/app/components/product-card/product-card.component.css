@@ -1,0 +1,113 @@
+.card {
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrap {
+  display: block;
+  background: #f6f6f6;
+}
+
+.image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  padding: 12px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-weight: 700;
+  text-decoration: none;
+  color: #111;
+  line-height: 1.25;
+}
+
+.desc {
+  margin: 0;
+  color: #444;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.likesRow {
+  margin-top: 4px;
+}
+
+.likes {
+  font-size: 14px;
+  color: #e91e63;
+  font-weight: 600;
+}
+
+.price {
+  font-weight: 800;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.star {
+  opacity: 0.25;
+  font-size: 14px;
+}
+
+.star.filled {
+  opacity: 1;
+}
+
+.ratingNum {
+  opacity: 0.75;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.btn {
+  border: 1px solid #111;
+  color: #111;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.btn.ghost {
+  border-color: #d6d6d6;
+}
+
+.btn.like {
+  border-color: #e91e63;
+  color: #e91e63;
+}
+
+.btn.danger {
+  border-color: #e53935;
+  color: #e53935;
+}
